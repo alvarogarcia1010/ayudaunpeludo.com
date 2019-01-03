@@ -1,0 +1,48 @@
+<%- layout('Layout/template.ejs') %>
+<!-- mainContainer -->
+<script>
+  var userLoggerId = <%- JSON.stringify(user) %>;
+  var users = <%- JSON.stringify(users) %>;
+  var posts = <%- JSON.stringify(posts) %>;
+  $(document).ready(function() {
+      console.log( "ready!" );
+      console.log(userLoggerId);
+      console.log(users);
+      console.log(posts);
+
+      $('textarea.js-auto-size').textareaAutoSize();
+
+      $("#aup-post-file").fileinput({
+          theme: "fas",
+          browseClass: "btn btn-outline-success",
+          showCaption: true,
+          showRemove: true,
+          showUpload: false
+      });
+  });
+
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-5 px-2">
+      <!-- Mi Perfil -->
+      <%- include('Partials/Profiles/myProfile.ejs') %>
+      <!-- Fin de mi perfil   -->
+      <!-- Sugerencias -->
+      <%- include('Partials/Profiles/Suggestions.ejs', {users}) %>
+      <!-- Fin de sugerencias -->
+    </div>
+    <div id="aup-home-post" class="col-lg-6 col-md-7 px-2">
+      <!--Agregar Publicacion-->
+      <%- include('Partials/Posts/addPost.ejs') %>
+      <!--Fin Agregar publicacion-->
+      <div id="aup-home-post-alert"></div>
+      <div id="aup-home-post-area"></div>
+    </div>
+    <!-- Publicidad -->
+    <div class="col-lg-3 px-2 d-none d-lg-inline">
+      <%- include('Partials/Ads/ads.ejs') %>
+    </div>
+    <!--Fin de publicidad-->
+  </div>
+</div>

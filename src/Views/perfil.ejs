@@ -1,0 +1,94 @@
+<%- layout('Layout/template.ejs') %>
+<!-- mainContainer -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 mt-7 px-2">
+        <!-- Mi Perfil -->
+        <%- include('Components/myProfile.ejs', {user: userProfile}) %>
+        <!-- Fin de mi perfil   -->
+      </div>
+      <div class="col-lg-6 mt-7 px-2">
+        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="publication-tab" data-toggle="tab" href="#publication" role="tab" aria-controls="publication" style="color:green" aria-selected="true">Publicaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="follower-tab" data-toggle="tab" href="#follower" role="tab" aria-controls="follower" style="color:green" aria-selected="false">Seguidores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="following-tab" data-toggle="tab" href="#following" role="tab" aria-controls="following" style="color:green" aria-selected="false">Siguiendo</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="publication" role="tabpanel" aria-labelledby="publication-tab">
+            <!--Agregar publicacion-->
+            <%- include('Components/addPost.ejs') %>
+            <!--Fin de agregar publicacion-->
+            <!--Alerta publicacion-->
+            <%- include('Components/postAlert.ejs') %>
+            <!--Fin alerta publicacion-->
+            <!-- Publicacion #1 -->
+            <%- include('Components/post.ejs') %>
+            <!-- Fin de publicación #1 -->
+            <!-- Publicacion #2 -->
+            <%- include('Components/post.ejs') %>
+            <!-- Fin de publicación #2 -->
+            <!-- Publicacion #3 -->
+            <%- include('Components/post.ejs') %>
+            <!-- Fin de publicación #3 -->
+            <!-- Publicacion #4 -->
+            <%- include('Components/post.ejs') %>
+            <!-- Fin de publicación #4 -->
+          </div>
+          <!--Tab Seguidires-->
+          <div class="tab-pane fade" id="follower" role="tabpanel" aria-labelledby="follower-tab">
+            <div class="container">
+              <!--Barra de busqueda-->
+              <%- include('Components/Searchbar.ejs') %>
+              <!--Fin de barra de busqueda-->
+              <div class="row">
+                <div class="col-md-6">
+                    <!--Seguidor-->
+                    <%- include('Components/Follower.ejs') %>
+                    <!--Fin de seguidoe-->
+                </div>
+                <div class="col-md-6">
+                    <!--Seguidor-->
+                    <%- include('Components/Follower.ejs') %>
+                    <!--Fin de seguidoe-->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Tab Siguiendo-->
+          <div class="tab-pane fade" id="following" role="tabpanel" aria-labelledby="following-tab">
+            <div class="container">
+              <!--Barra de busqueda-->
+              <%- include('Components/Searchbar.ejs') %>
+              <!--Fin de barra de busqueda-->
+              <div class="row">
+                <div class="col-md-6">
+                    <!--Seguidor-->
+                    <%- include('Components/Follower.ejs') %>
+                    <!--Fin de seguidoe-->
+                </div>
+                <div class="col-md-6">
+                    <!--Seguidor-->
+                    <%- include('Components/Follower.ejs') %>
+                    <!--Fin de seguidoe-->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-3 mt-7 px-2">
+        <!-- Sugerencias -->
+        <%- include('Components/Suggestions.ejs') %>
+        <!-- Fin de sugerencias -->
+      </div>
+    </div>
+<!-- mainContainer -->

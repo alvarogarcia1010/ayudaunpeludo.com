@@ -1,0 +1,35 @@
+<div class="d-flex m-1">
+    <div class="flex-align-center pr-2">
+      <a href="<%= '/' + user.username %>">
+        <img class="rounded-circle" src="<%= user.urlImage %>" style="width: 45px; height: 45px;">
+      </a>
+    </div>
+    <div class="flex-align-center px-2">
+      <a href="<%= '/' + user.username %>" class="card-link text-dark font-weight-bold"><%= user.name + ' ' + user.surname %></a>
+      <p class="m-0 text-muted username" ><%= user.username %></p>
+    </div>
+    <div class="flex-align-center ml-auto">
+      <button type="button" class="btn btn-outline-success seguir" data-id="<%= user._id %>">Seguir</button>
+    </div>
+    <script>
+        window.onload = () => {
+          document.querySelectorAll(".seguir").forEach(botons => {
+            botons.addEventListener("click", (event) => {
+              event.preventDefault();
+              fetch('/api/follow/' + botons.getAttribute("data-id"), {
+                      method: 'POST'
+              }).then(res => res.json())
+                .then(res => {
+                    if (res.success) {
+                      botons.innerHTML = "Siguiendo";
+                      botons.classList.remove("btn-outline-success");
+                      botons.classList.add("btn-success");
+                    } else {
+                      alert("Error al seguirlo");
+                    }
+                  });
+              });
+          });
+        };
+    </script>
+</div>

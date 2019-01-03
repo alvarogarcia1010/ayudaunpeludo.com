@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('./head.ejs') %>
+  <link rel="shortcut icon" href="images/icon-ayuda-un-peludo.png" type="image/vnd.microsoft.icon" />
+  <title>Ayuda un peludo</title>
+</head>
+<body>
+  <%- include('./top-bar.ejs') %>
+  <button id="app-loader" class = "btn btn-warning btn-lg app-loader d-none" disabled><i class="fas fa-spinner"></i> Cargando</button>
+  <div id="main-content">
+    <%- body %>
+  </div>
+  <!--boton scroll to top-->
+  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top"><i class="fas fa-chevron-circle-up"></i></button>
+  <%- include('../Components/RecoverPassword.ejs') %>
+  <%- include('../Components/Privacy.ejs') %>
+  <%- include('../Components/Conditions.ejs') %>
+  <%- include('../Components/Modalmsg.ejs') %>
+  <%- include('../Components/Modalshare.ejs') %>
+
+  <%- include('./footer.ejs') %>
+</body>
+</html>

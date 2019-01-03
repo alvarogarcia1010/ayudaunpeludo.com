@@ -1,0 +1,24 @@
+<%- layout('Layout/template.ejs') %>
+
+<!-- mainContainer -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-5 px-2">
+      <!-- Mi Perfil -->
+      <%- include('Components/myProfile.ejs') %>
+      <!-- Fin de mi perfil   -->
+      <!-- Sugerencias -->
+      <%- include('Components/Suggestions.ejs', {users: users}) %>
+      <!-- Fin de sugerencias -->
+    </div>
+    <!-- notificationContainer -->
+    <div class="col-lg-6 col-md-7 px-2">
+      <%- include('Components/notificationTable.ejs') %>
+    </div>
+    <!-- notificationContainer -->
+    <div class="col-lg-3 px-2 d-none d-lg-inline">
+      <%- include('Components/ads.ejs') %>
+    </div>
+  </div>
+</div>
+<!-- mainContainer -->

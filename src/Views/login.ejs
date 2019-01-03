@@ -1,0 +1,36 @@
+<%- layout('Layout/template.ejs') %>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xl-8  col-md-7 colpx-2">
+          <%- include('./carrusel.ejs') %>
+      </div>
+      <div class="col-xl-4 col-md-5 px-2">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" style="color:green" aria-selected="true">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" style="color:green" aria-selected="false">Registrarme</a>
+                </li>
+            </ul>
+
+              <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <%- include('Components/form-signin.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <%- include('Components/form-signup.ejs') %>
+                    </div>
+              </div>
+        </div>
+  </div>
+</div>
+
+  
+
+
+  
+
+  
+
